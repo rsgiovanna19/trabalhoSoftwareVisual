@@ -1,28 +1,27 @@
-//essa parte do banco eu utilizei como base a do professor
+using System.Collections.Generic;
+using System.Linq;
 
-using Microsoft.EntityFrameworkCore;
 
+//base na do professor - tem que arrumar - eh a forma de conexao com o banco de dados 
 public class AppDbContext : DbContext {
 
+    // public AppDbContext(
+    //     DbContextOptions<AppDbContext> options)
+    //      : base(options)
+    // {
+    // }
 
     protected override void OnConfiguring(
         DbContextOptionsBuilder builder)
     {
         string con = "server=localhost;port=3306;" +
-                     "database=planner;user=root;password=1234";
+                     "database=planner;user=root;password=positivo";
 
         builder.UseMySQL(con)
         .LogTo(Console.WriteLine, LogLevel.Information);
         
     }
-
-    //Tabelas
-    public DbSet<Tarefa> Tarefas => Set<Tarefa>();
-
 }
-
-
-
 
 public class Banco
 {
@@ -45,12 +44,12 @@ public class Banco
         return tenis.FirstOrDefault(t => t.Id == id);
     }
 
- // Adicionando tênis na lista
-    public static Tenis AddTenis(Tenis tenis)
+    // Adicionando tênis na lista
+    public static Tenis AddTenis(Tenis novoTenis)
     {
-        tenis.Id = tenis.Count + 1; // Ajuste aqui para atribuir um novo ID
-        Banco.tenis.Add(tenis); // Use a lista corretamente
-        return tenis;
+        novoTenis.Id = tenis.Count + 1; // Atribui um novo ID
+        tenis.Add(novoTenis); // Adiciona o novo tênis à lista
+        return novoTenis;
     }
 
     // Atualizando um tênis por ID
@@ -80,3 +79,4 @@ public class Banco
         return true;
     }
 }
+

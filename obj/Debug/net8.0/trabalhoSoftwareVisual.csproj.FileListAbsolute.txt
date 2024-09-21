@@ -23,3 +23,6 @@ C:\_wsgio\trabalhoSoftwareVisual\obj\Debug\net8.0\refint\trabalhoSoftwareVisual.
 C:\_wsgio\trabalhoSoftwareVisual\obj\Debug\net8.0\trabalhoSoftwareVisual.pdb
 C:\_wsgio\trabalhoSoftwareVisual\obj\Debug\net8.0\trabalhoSoftwareVisual.genruntimeconfig.cache
 C:\_wsgio\trabalhoSoftwareVisual\obj\Debug\net8.0\ref\trabalhoSoftwareVisual.dll
+C:\_wsgio\trabalhoSoftwareVisual\obj\Debug\net8.0\trabalhoSoftwareVisual.csproj.AssemblyReference.cache
+C:\_wsgio\trabalhoSoftwareVisual\obj\Debug\net8.0\trabalhoSoftwareVisual.sourcelink.json
+C:\_wsgio\trabalhoSoftwareVisual\obj\Debug\net8.0\trabalhoSoftwareVisual.MvcApplicationPartsAssemblyInfo.cs
