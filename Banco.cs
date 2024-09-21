@@ -45,37 +45,38 @@ public class Banco
         return tenis.FirstOrDefault(t => t.Id == id);
     }
 
-//add tenis na list Loja
-    public static Loja addTenis (Loja tenis)
+ // Adicionando tênis na lista
+    public static Tenis AddTenis(Tenis tenis)
     {
-        Tenis.Id = Tenis.Count + 1;
-        Tenis.Add(Loja);
+        tenis.Id = tenis.Count + 1; // Ajuste aqui para atribuir um novo ID
+        Banco.tenis.Add(tenis); // Use a lista corretamente
         return tenis;
     }
 
-    public static Tarefa updateTarefa(int id, Tarefa tarefa)
+    // Atualizando um tênis por ID
+    public static Tenis UpdateTenis(int id, Tenis tenisAtualizado)
     {
-        var tarefaExistente = tarefas.FirstOrDefault(t => t.Id == id);
-        if (tarefaExistente == null)
+        var tenisExistente = tenis.FirstOrDefault(t => t.Id == id);
+        if (tenisExistente == null)
         {
             return null;
         }
 
-        tarefaExistente.Descricao = tarefa.Descricao;
-        tarefaExistente.Concluida = tarefa.Concluida;
-        return tarefaExistente;
+        tenisExistente.Nome = tenisAtualizado.Nome;
+        tenisExistente.Marca = tenisAtualizado.Marca;
+        return tenisExistente;
     }
 
-    public static bool deleteTarefa(int id)
+    // Deletando um tênis por ID
+    public static bool DeleteTenis(int id)
     {
-        var tarefaExistente = tarefas.FirstOrDefault(t => t.Id == id);
-        if (tarefaExistente == null)
+        var tenisExistente = tenis.FirstOrDefault(t => t.Id == id);
+        if (tenisExistente == null)
         {
             return false;
         }
 
-        tarefas.Remove(tarefaExistente);
+        tenis.Remove(tenisExistente);
         return true;
     }
-
 }
